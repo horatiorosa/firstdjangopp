@@ -1,1 +1,17 @@
-<p>Item Detail Page. So browse away!</p>
+<h3>Item: {{item.title|capfirst}} </h3>
+<h4>Item Detail:  {{item.description}} </h4>
+
+
+
+
+<!-- TEMPLATE SYNTAX
+{{ variable}} 
+a variables value is shown when the variable name is used inside dble curly braces
+{ % tag % } -with no spaces
+a template tag is enclosed in curly brackets with % and are used for loops, ifs, structural elements, for example
+{ { variable | filter } } -with no spaces
+variable can have a pipe charaacter after it to use as a template filter 
+they take a string as input and return a sring as output
+mostly used to take a string and change some formatting such as datetime formatting or plain text in some cases like a title or uppercase
+{ % url 'index' % } generate path to index view result: /
+{ % url "item_detail item.id % } if a url has any name groups the url requires these as additional params the 2nd tag rengers the view to the item detail for whatever id is given result: items/1/-->
