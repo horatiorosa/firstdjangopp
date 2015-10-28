@@ -122,3 +122,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'myfirstdjangopp', 'static'),
+)  #added this line to link to static assests such as CSS and JS files folder is located in static folder inside myfirstdjangopp

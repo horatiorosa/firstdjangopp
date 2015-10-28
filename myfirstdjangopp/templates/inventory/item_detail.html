@@ -1,5 +1,21 @@
-<h3>Item: {{item.title|capfirst}} </h3>
-<h4>Item Detail:  {{item.description}} </h4>
+{% extends "base.html" %}
+
+{% block content %}
+	<a href="{% url 'index' %}">Back to item list</a>
+	<h3>
+		Item: {{ item.title|capfirst }} 
+	</h3>
+	<p> 
+		{{ item.amount }} currently in stock 
+	</p>
+	<h4>
+		Description:
+	</h4>
+	<p>
+		{{ item.description }} 
+	</p>
+
+{% endblock content %}
 
 
 
@@ -8,7 +24,7 @@
 {{ variable}} 
 a variables value is shown when the variable name is used inside dble curly braces
 { % tag % } -with no spaces
-a template tag is enclosed in curly brackets with % and are used for loops, ifs, structural elements, for example
+a template tag is enclosed in curly brackets with % and are used for loops, ifs, structural elements, and URLs for example
 { { variable | filter } } -with no spaces
 variable can have a pipe charaacter after it to use as a template filter 
 they take a string as input and return a sring as output

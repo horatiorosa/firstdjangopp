@@ -1,20 +1,29 @@
-<ul>
-	{% for item in items %}
-		<li>
-			<a href="{url 'item_detail' item.id}">
-			{{item.title|capfirst}}
-			</a>
-		</li>
-		<li>Item Detail:  {{item.description}}</li>
-		<li>Items in Stock: {{item.amount}}</li>
-	{% endfor %}
-</ul>
+{% extends "base.html" %}
+
+{% block content %}
+	<h3>Items in Stock</h3>
+	<ul>
+		{% for item in items %}
+			<li>
+				<a href="{% url 'item_detail' item.id %}">
+					{{ item.title|capfirst }}
+				</a>
+			</li>
+			<li>
+				Item Detail:  {{ item.description }}
+			</li>
+			<li>
+				Items in Stock: {{ item.amount }}
+			</li>
+		{% endfor %}
+	</ul>
+{% endblock content %}
 
 <!-- TEMPLATE SYNTAX
 {{ variable}} 
 a variables value is shown when the variable name is used inside dble curly braces
 { % tag % } -with no spaces
-a template tag is enclosed in curly brackets with % and are used for loops, ifs, structural elements, for example
+a template tag is enclosed in curly brackets with % and are used for loops, ifs, structural elements, and URLs for example
 { { variable | filter } } -with no spaces
 variable can have a pipe charaacter after it to use as a template filter 
 they take a string as input and return a sring as output

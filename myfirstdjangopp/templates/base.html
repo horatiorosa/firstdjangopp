@@ -1,9 +1,16 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta charset"UTF=8">
 		<title>First Django App</title>
+		<meta name="description" content="">
+		<link rel="stylesheet" type="text/css" href=" {% static 'main.css' %} ">
 	</head>
 	<body>
-
+		{% block content %}  #similar to yield in rails
+		{% endblock content %}
+		<script type="text/javascript" src=" {% static 'main.js' %} "></script>
 	</body>
 </html>
